@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 19:03:13 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/09 19:04:26 by hroh             ###   ########.fr       */
+/*   Created: 2021/03/10 19:52:17 by hroh              #+#    #+#             */
+/*   Updated: 2021/03/10 21:06:58 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_puterr(void)
+void	ft_free_all(t_env *env, char *line)
 {
-	write(STDERR_FILENO, "Error\n", 6);
-	return (1);
+	ft_free_2d_arr((void **)env->arr_a, env->ori_cnt);
+	ft_free_2d_arr((void **)env->arr_b, env->ori_cnt);
+	if (line)
+		free(line);
 }

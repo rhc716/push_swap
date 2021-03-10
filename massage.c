@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsdup.c                                       :+:      :+:    :+:   */
+/*   massage.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 15:18:50 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/09 16:43:55 by hroh             ###   ########.fr       */
+/*   Created: 2021/03/09 19:03:13 by hroh              #+#    #+#             */
+/*   Updated: 2021/03/10 21:07:37 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-char	**ft_strsdup(char *str[])
+int	ft_puterr(void)
 {
-	char		**rtn;
-	int			i;
+	write(STDERR_FILENO, "Error\n", 6);
+	return (1);
+}
 
-	i = 0;
-	while (str[i] != 0)
-		i++;
-	rtn = malloc(sizeof(char *) * (i + 1));
-	if (rtn == 0)
-		return (0);
-	while (i >= 0)
-	{
-		if (str[i] != 0)
-			rtn[i] = ft_strdup(str[i]);
-		else
-			rtn[i] = 0;
-		i--;
-	}
-	return (rtn);
+int	ft_putmsg(char *str)
+{
+	write(STDOUT_FILENO, str, ft_strlen(str));
+	return (0);
 }

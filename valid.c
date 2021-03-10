@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 19:02:16 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/09 19:03:36 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/10 21:05:54 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int		ft_isint_argv(char **argv)
 	return (1);
 }
 
-void 	ft_check_argv(char **argv)
+void	ft_check_argv(char **argv)
 {
 	if (!ft_isnum_argv(argv) ||
 		!ft_check_duplicate(argv) ||

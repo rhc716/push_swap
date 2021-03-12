@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:42:12 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/10 20:07:08 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/11 19:45:01 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ft_action_ra(t_env *env, int mute)
 
 	i = 0;
 	first = env->arr_a[0];
+	if (env->a_cnt == 0)
+		return ;
 	while (i < env->a_cnt)
 	{
 		if (i == env->a_cnt - 1)
@@ -38,6 +40,8 @@ void	ft_action_rb(t_env *env, int mute)
 
 	i = 0;
 	first = env->arr_b[0];
+	if (env->b_cnt == 0)
+		return ;
 	while (i < env->b_cnt)
 	{
 		if (i == env->b_cnt - 1)

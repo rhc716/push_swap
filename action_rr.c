@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:41:22 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/10 21:19:14 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/11 19:45:23 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_action_rra(t_env *env, int mute, int push_call)
 	char	*last;
 
 	i = env->a_cnt - 1;
+	if (env->a_cnt == 0)
+		return ;
 	if (i < 0)
 		i = 0;
 	if (push_call == 1)
@@ -41,6 +43,8 @@ void	ft_action_rrb(t_env *env, int mute, int push_call)
 	char	*last;
 
 	i = env->b_cnt - 1;
+	if (env->b_cnt == 0)
+		return ;
 	if (i < 0)
 		i = 0;
 	if (push_call == 1)

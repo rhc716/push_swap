@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 19:02:16 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/10 21:05:54 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/11 15:53:02 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,24 @@ int		ft_isint_argv(char **argv)
 	{
 		num = ft_atoi_long(argv[i]);
 		if (num > 2147483647 || num < -2147483648)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int		ft_is_ok(t_env *env, int end)
+{
+	int i;
+
+	i = 0;
+	if (end == env->ori_cnt && (env->a_cnt != env->ori_cnt || env->b_cnt != 0))
+		return (0);
+	while (env->arr_a[i] && env->arr_a[i + 1] && i + 1 < end)
+	{
+		if (env->arr_a[i][0] == 'B' || env->arr_a[i + 1][0] == 'B')
+			return (0);
+		if (ft_atoi(env->arr_a[i]) > ft_atoi(env->arr_a[i + 1]))
 			return (0);
 		i++;
 	}

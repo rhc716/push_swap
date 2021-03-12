@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 16:42:14 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/10 21:03:24 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/12 14:50:54 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int		main(int argc, char **argv)
 	if (argc == 2)
 		return (0);
 	ft_set_env(&env, argc, argv);
-	ft_sort(&env);
+	if (!ft_is_ok(&env, env.ori_cnt))
+		ft_sort(&env);
 	ft_free_all(&env, NULL);
 	return (0);
 }

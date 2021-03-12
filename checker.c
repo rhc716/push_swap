@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 16:41:54 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/10 21:22:07 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/12 15:44:57 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,29 +60,13 @@ int		ft_check_cmd(char *line)
 	return (ret);
 }
 
-int		ft_is_ok(t_env *env)
-{
-	int i;
-
-	i = 0;
-	if (env->a_cnt != env->ori_cnt || env->b_cnt != 0)
-		return (0);
-	while (env->arr_a[i] && env->arr_a[i + 1])
-	{
-		if (ft_atoi(env->arr_a[i]) > ft_atoi(env->arr_a[i + 1]))
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
 int		ft_checker_exit(int err, t_env *env, char *line)
 {
 	int ret;
 
 	if (err > 0)
 		ret = ft_puterr();
-	else if (ft_is_ok(env) == 1)
+	else if (ft_is_ok(env, env->ori_cnt) == 1)
 		ret = ft_putmsg("OK\n");
 	else
 		ret = ft_putmsg("KO\n");

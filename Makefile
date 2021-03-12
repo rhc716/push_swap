@@ -1,12 +1,13 @@
 PUSH = push_swap
 CHECK = checker
 
-CC = gcc
+CC = gcc -g3 -fsanitize=address
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS_1 = push_swap.c
 SRCS_2 = checker.c
-SRCS_3 = massage.c valid.c setting.c action_r.c action_rr.c action_s_p.c sort.c free.c
+SRCS_3 = massage.c valid.c setting.c action_r.c action_rr.c action_s_p.c \
+		sort.c free.c sort_small.c sort_big_util.c sort_big.c
 
 PATHLIBFT = ./libft
 LIBOPTION = -L$(PATHLIBFT) -lft

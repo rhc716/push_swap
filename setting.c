@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:28:24 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/10 21:06:33 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/12 15:58:24 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,24 +46,23 @@ char	**ft_make_arr_a(int argc, char **argv)
 	return (ret);
 }
 
-void	ft_find_lowest(t_env *env)
+int		ft_find_a_min(t_env *env, int end)
 {
-	int i;
-	int n;
+	int		i;
+	int		n;
 
-	env->lowest = ft_atoi(env->arr_a[0]);
-	env->lowest_pos = 0;
+	env->a_min = ft_atoi(env->arr_a[0]);
+	env->a_min_pos = 1;
 	i = 0;
-	while (env->arr_a[i] && env->arr_a[i + 1])
+	while (env->arr_a[++i] && i < end)
 	{
-		if (env->arr_a[i + 1][0] != 'B' &&
-			((n = ft_atoi(env->arr_a[i + 1])) < env->lowest))
+		if (((n = ft_atoi(env->arr_a[i])) < env->a_min))
 		{
-			env->lowest = n;
-			env->lowest_pos = i + 2;
+			env->a_min = n;
+			env->a_min_pos = i + 1;
 		}
-		i++;
 	}
+	return (env->a_min_pos);
 }
 
 void	ft_set_env(t_env *env, int argc, char **argv)
@@ -73,5 +72,8 @@ void	ft_set_env(t_env *env, int argc, char **argv)
 	env->a_cnt = argc - 1;
 	env->ori_cnt = env->a_cnt;
 	env->b_cnt = 0;
-	ft_find_lowest(env);
+	env->before_pb_rb = 0;
+	env->before_pb_ra = 0;
+	env->pb_pos = 0;
+	ft_find_a_min(env, env->a_cnt);
 }

@@ -16,6 +16,8 @@ option_3="-3"
 option_5="-5"
 option_100="-100"
 option_500="-500"
+file1=./push_swap
+file2=./checker
 arg1=$1
 max=10 # test count default
 
@@ -24,16 +26,22 @@ if [ $# -ne 1 ] && [ $# -ne 2 ] ; then
 	exit
 fi
 
+if [[ $option_3 != $arg1 ]] && [[ $option_5 != $arg1 ]] && [[ $option_100 != $arg1 ]] && [[ $option_500 != $arg1 ]]; then
+	echo -e "$color1 TEST OPTION ERR\n ARG1 : -3, -5, -100, -500"
+	exit
+fi
+
 if [ $# -eq 2 ] ; then
 	max=$2 # test count = arg2
 fi
 
-if [[ $option_3 != $arg1 ]] && [[ $option_5 != $arg1 ]] && [[ $option_100 != $arg1 ]] && [[ $option_500 != $arg1 ]]; then
-	echo -e "$color1 TEST option plz : -3\t-5\t-100\t-500"
-	exit
+if [ -f $file1 ] && [ -f $file1 ] ; then
+	echo ""
+else
+	make
 fi
 
-gcc ./src/test/make_number.c -o make_number
+gcc ./src/test/make_number.c -L./libft -lft -o make_number
 touch temp
 
 if [[ $option_3 == $arg1 ]] ; then

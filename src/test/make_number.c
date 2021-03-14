@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   generate_checker_param.c                           :+:      :+:    :+:   */
+/*   make_number.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 01:28:10 by cbaek             #+#    #+#             */
-/*   Updated: 2021/03/12 22:08:48 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/14 15:15:30 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,63 +15,47 @@
 #include <time.h>
 #include <sys/time.h>
 #include <unistd.h>
+#include "../../libft/libft.h"
 
-static int	ft_atoi(const char *str)
+void	ft_random_arr(int count, int *nums)
 {
-	int	idx;
-	int	result;
-	int	sign;
+	int	i;
+	int	temp;
+	int	ran1;
+	int	ran2;
 
-	idx = 0;
-	result = 0;
-	sign = 0;
-	while (str[idx] == ' ' || (str[idx] > 8 && str[idx] < 14))
-		idx++;
-	if (str[idx] == '+' || str[idx] == '-')
-		sign = -(str[idx++] - 44);
-	if (str[idx] >= '0' && str[idx] <= '9')
-	{
-		if (sign == 0)
-			sign = 1;
-		while (str[idx] >= '0' && str[idx] <= '9')
-			result = (result * 10) + (str[idx++] - '0');
-	}
-	return (sign * result);
-}
-int main(int argc, char **argv)
-{
-    struct timeval time; 
-    gettimeofday(&time,NULL);
-    srand((time.tv_sec * 1000) + (time.tv_usec / 1000));
-
-	int count;
-	int *nums;
-	if (argc == 2)
-		count = ft_atoi(argv[1]);
-	else
-		count = 10;
-	if (!(nums = (int *)malloc(sizeof(int) * count)))
-		return (0);
-	int temp;
-	int ran1;
-	int ran2;
-
-	for (int i = 0; i < count; i++)
-	{
+	i = -1;
+	while (++i < count)
 		nums[i] = i + 1;
-	}
-	for (int i = 0; i < count * 2; i++)
+	i = -1;
+	while (++i < count * 2)
 	{
-		ran1 = rand()%count;
-		ran2 = rand()%count;
+		ran1 = rand() % count;
+		ran2 = rand() % count;
 		temp = nums[ran1];
 		nums[ran1] = nums[ran2];
 		nums[ran2] = temp;
 	}
-	for (int i = 0; i < count; i++)
-	{
+}
+
+int		main(int argc, char **argv)
+{
+	int				count;
+	int				*nums;
+	struct timeval	time;
+	int				i;
+
+	if (argc != 2)
+		return (0);
+	gettimeofday(&time, NULL);
+	srand((time.tv_sec * 1000) + (time.tv_usec / 1000));
+	count = ft_atoi(argv[1]);
+	if (!(nums = (int *)malloc(sizeof(int) * count)))
+		return (0);
+	ft_random_arr(count, nums);
+	i = -1;
+	while (++i < count)
 		printf("%d ", nums[i]);
-	}
 	printf("\n");
 	free(nums);
 	return (0);

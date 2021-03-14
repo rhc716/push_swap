@@ -6,11 +6,11 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:28:24 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/12 15:58:24 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/14 14:38:08 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 char	**ft_make_arr_b(int argc)
 {

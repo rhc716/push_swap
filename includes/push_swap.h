@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 16:59:21 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/12 16:30:40 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/14 14:37:16 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include "./libft/libft.h"
+# include "../libft/libft.h"
 
 typedef struct	s_env
 {

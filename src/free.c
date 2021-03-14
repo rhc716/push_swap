@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 16:42:14 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/12 14:50:54 by hroh             ###   ########.fr       */
+/*   Created: 2021/03/10 19:52:17 by hroh              #+#    #+#             */
+/*   Updated: 2021/03/14 14:37:50 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-int		main(int argc, char **argv)
+void	ft_free_all(t_env *env, char *line)
 {
-	t_env	env;
-
-	if (argc < 2)
-		return (0);
-	ft_check_argv(argv);
-	if (argc == 2)
-		return (0);
-	ft_set_env(&env, argc, argv);
-	if (!ft_is_ok(&env, env.ori_cnt))
-		ft_sort(&env);
-	ft_free_all(&env, NULL);
-	return (0);
+	ft_free_2d_arr((void **)env->arr_a, env->ori_cnt);
+	ft_free_2d_arr((void **)env->arr_b, env->ori_cnt);
+	if (line)
+		free(line);
 }

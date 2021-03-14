@@ -6,11 +6,11 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 16:00:53 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/12 16:05:47 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/14 14:38:13 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int		ft_is_b_desc(t_env *env)
 {

@@ -6,11 +6,11 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 16:24:10 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/12 16:35:38 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/14 14:38:16 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_save_low_cost(t_env *env, int l, int r)
 {

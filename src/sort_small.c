@@ -6,11 +6,11 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 21:27:54 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/12 15:56:41 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/14 14:38:23 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_sort_3_num(t_env *env)
 {

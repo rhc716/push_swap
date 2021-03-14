@@ -6,11 +6,11 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 19:02:16 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/11 15:53:02 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/14 14:38:37 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int		ft_isnum_argv(char **argv)
 {

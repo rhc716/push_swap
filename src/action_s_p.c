@@ -6,11 +6,11 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:38:26 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/10 20:08:01 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/14 14:37:41 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_action_sa(t_env *env, int mute)
 {

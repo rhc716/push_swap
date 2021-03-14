@@ -2,7 +2,7 @@
 stack 정렬 알고리즘
 
 [테스트 옵션 선택]
-![첫](https://user-images.githubusercontent.com/28697165/110968523-fbf0da00-839a-11eb-8792-ff2b6cd01fbf.jpg)
+![image](https://user-images.githubusercontent.com/28697165/111058790-1bd7e900-84d4-11eb-8acf-a36382a10e3c.png)
 
 
 

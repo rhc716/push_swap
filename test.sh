@@ -85,7 +85,7 @@ if [[ $option_3 == $arg1 ]] || [[ $option_5 = $arg1 ]] ; then
 	if [[ $option_5 = $arg1 ]] ; then
 	echo -e "\n$color1=========================="
 	echo -e "$color2\t[TEST END]"
-	echo -e "\e$color1=========================="
+	echo -e "$color1=========================="
 	fi
 fi
 
@@ -107,7 +107,7 @@ if [[ $option_100 = $arg1 ]] || [[ $option_500 = $arg1 ]] ; then
 	done
 	echo -e "$color1=========================="
 	echo -e "$color2\t[TEST END]"
-	echo -e "\e$color1=========================="
+	echo -e "$color1=========================="
 fi
 
 rm ./temp

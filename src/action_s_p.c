@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:38:26 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/14 14:37:41 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/16 22:10:17 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ void	ft_action_pa(t_env *env, int mute)
 
 	if (env->b_cnt > 0)
 	{
-		ft_action_rra(env, 1, 1);
+		ft_action_rra(env, 1, 1, 0);
 		temp = env->arr_a[0];
 		env->arr_a[0] = env->arr_b[0];
 		env->arr_b[0] = temp;
-		ft_action_rb(env, 1);
+		ft_action_rb(env, 1, 0);
 		env->b_cnt--;
 		env->a_cnt++;
 	}
@@ -66,11 +66,11 @@ void	ft_action_pb(t_env *env, int mute)
 
 	if (env->a_cnt > 0)
 	{
-		ft_action_rrb(env, 1, 1);
+		ft_action_rrb(env, 1, 1, 0);
 		temp = env->arr_b[0];
 		env->arr_b[0] = env->arr_a[0];
 		env->arr_a[0] = temp;
-		ft_action_ra(env, 1);
+		ft_action_ra(env, 1, 0);
 		env->a_cnt--;
 		env->b_cnt++;
 	}

@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 21:27:54 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/14 14:38:23 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/16 22:10:54 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,21 @@ void	ft_sort_3_num(t_env *env)
 	if (env->a_min_pos == 1)
 	{
 		ft_action_sa(env, 0);
-		ft_action_ra(env, 0);
+		ft_action_ra(env, 0, 0);
 	}
 	else if (env->a_min_pos == 2 &&
 			ft_atoi(env->arr_a[0]) < ft_atoi(env->arr_a[2]))
 		ft_action_sa(env, 0);
 	else if (env->a_min_pos == 2 &&
 			ft_atoi(env->arr_a[0]) > ft_atoi(env->arr_a[2]))
-		ft_action_ra(env, 0);
+		ft_action_ra(env, 0, 0);
 	else if (env->a_min_pos == 3 &&
 			ft_atoi(env->arr_a[0]) < ft_atoi(env->arr_a[1]))
-		ft_action_rra(env, 0, 0);
+		ft_action_rra(env, 0, 0, 0);
 	else
 	{
 		ft_action_sa(env, 0);
-		ft_action_rra(env, 0, 0);
+		ft_action_rra(env, 0, 0, 0);
 	}
 }
 
@@ -50,10 +50,10 @@ void	ft_sort_5_num(t_env *env, int num)
 		rra_cnt = env->a_cnt - env->a_min_pos + 1;
 		if (rra_cnt < env->a_min_pos - 1)
 			while (--rra_cnt >= 0)
-				ft_action_rra(env, 0, 0);
+				ft_action_rra(env, 0, 0, 0);
 		else
 			while (--env->a_min_pos > 0)
-				ft_action_ra(env, 0);
+				ft_action_ra(env, 0, 0);
 		if (ft_is_ok(env, num))
 			return ;
 		ft_action_pb(env, 0);

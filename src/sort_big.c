@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 16:24:10 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/14 14:38:16 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/16 22:05:59 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,18 @@ void	ft_get_pb_target(t_env *env)
 void	ft_sort_pb_loop(t_env *env)
 {
 	ft_get_pb_target(env);
-	if (env->before_pb_rb > 0 && ++env->before_pb_rb > 0)
-		while (--env->before_pb_rb > 0)
-			ft_action_rb(env, 0);
-	if (env->before_pb_rb < 0 && --env->before_pb_rb < 0)
-		while (++env->before_pb_rb < 0)
-			ft_action_rrb(env, 0, 0);
-	if (env->before_pb_ra > 0 && ++env->before_pb_ra > 0)
-		while (--env->before_pb_ra > 0)
-			ft_action_ra(env, 0);
-	if (env->before_pb_ra < 0 && --env->before_pb_ra < 0)
-		while (++env->before_pb_ra < 0)
-			ft_action_rra(env, 0, 0);
+	while (env->before_pb_ra > 0 && env->before_pb_rb > 0)
+		ft_action_rr(env, 0, -1);
+	while (env->before_pb_ra < 0 && env->before_pb_rb < 0)
+		ft_action_rrr(env, 0, 1);
+	while (env->before_pb_ra > 0)
+		ft_action_ra(env, 0, -1);
+	while (env->before_pb_ra < 0)
+		ft_action_rra(env, 0, 0, 1);
+	while (env->before_pb_rb > 0)
+		ft_action_rb(env, 0, -1);
+	while (env->before_pb_rb < 0)
+		ft_action_rrb(env, 0, 0, 1);
 	ft_action_pb(env, 0);
 }
 
@@ -86,10 +86,10 @@ void	ft_sort_big(t_env *env)
 		ft_get_rb_cnt(env, 0);
 		if (env->before_pb_rb > 0)
 			while (--env->before_pb_rb >= 0)
-				ft_action_rb(env, 0);
+				ft_action_rb(env, 0, 0);
 		else if (env->before_pb_rb < 0)
 			while (++env->before_pb_rb <= 0)
-				ft_action_rrb(env, 0, 0);
+				ft_action_rrb(env, 0, 0, 0);
 	}
 	while (env->b_cnt > 0)
 		ft_action_pa(env, 0);

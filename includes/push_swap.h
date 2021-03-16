@@ -6,7 +6,7 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 16:59:21 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/14 14:37:16 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/16 22:04:50 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ void			ft_action_sb(t_env *env, int mute);
 void			ft_action_ss(t_env *env, int mute);
 void			ft_action_pa(t_env *env, int mute);
 void			ft_action_pb(t_env *env, int mute);
-void			ft_action_ra(t_env *env, int mute);
-void			ft_action_rb(t_env *env, int mute);
-void			ft_action_rr(t_env *env, int mute);
-void			ft_action_rra(t_env *env, int mute, int push_call);
-void			ft_action_rrb(t_env *env, int mute, int push_call);
-void			ft_action_rrr(t_env *env, int mute);
+void			ft_action_ra(t_env *env, int mute, int add);
+void			ft_action_rb(t_env *env, int mute, int add);
+void			ft_action_rr(t_env *env, int mute, int add);
+void			ft_action_rra(t_env *env, int mute, int push_call, int add);
+void			ft_action_rrb(t_env *env, int mute, int push_call, int add);
+void			ft_action_rrr(t_env *env, int mute, int add);
 void			ft_set_env(t_env *env, int argc, char **argv);
 void			ft_sort(t_env *env);
 int				ft_find_a_min(t_env *env, int end);

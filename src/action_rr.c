@@ -6,13 +6,13 @@
 /*   By: hroh <hroh@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:41:22 by hroh              #+#    #+#             */
-/*   Updated: 2021/03/14 14:37:38 by hroh             ###   ########.fr       */
+/*   Updated: 2021/03/16 22:07:37 by hroh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_action_rra(t_env *env, int mute, int push_call)
+void	ft_action_rra(t_env *env, int mute, int push_call, int add)
 {
 	int		i;
 	char	*last;
@@ -35,9 +35,11 @@ void	ft_action_rra(t_env *env, int mute, int push_call)
 	}
 	if (mute != 1)
 		write(STDOUT_FILENO, "rra\n", 4);
+	if (add != 0)
+		env->before_pb_ra = env->before_pb_ra + add;
 }
 
-void	ft_action_rrb(t_env *env, int mute, int push_call)
+void	ft_action_rrb(t_env *env, int mute, int push_call, int add)
 {
 	int		i;
 	char	*last;
@@ -60,12 +62,19 @@ void	ft_action_rrb(t_env *env, int mute, int push_call)
 	}
 	if (mute != 1)
 		write(STDOUT_FILENO, "rrb\n", 4);
+	if (add != 0)
+		env->before_pb_rb = env->before_pb_rb + add;
 }
 
-void	ft_action_rrr(t_env *env, int mute)
+void	ft_action_rrr(t_env *env, int mute, int add)
 {
-	ft_action_rra(env, 1, 0);
-	ft_action_rrb(env, 1, 0);
+	ft_action_rra(env, 1, 0, 0);
+	ft_action_rrb(env, 1, 0, 0);
 	if (mute != 1)
 		write(STDOUT_FILENO, "rrr\n", 4);
+	if (add != 0)
+	{
+		env->before_pb_ra = env->before_pb_ra + add;
+		env->before_pb_rb = env->before_pb_rb + add;
+	}
 }

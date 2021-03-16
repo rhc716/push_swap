@@ -11,7 +11,7 @@ stack 정렬 알고리즘
 ![image](https://user-images.githubusercontent.com/28697165/111058813-60fc1b00-84d4-11eb-891a-5f7c65189496.png)
 
 [100개]
-![image](https://user-images.githubusercontent.com/28697165/110969826-78d08380-839c-11eb-818b-bc8603930be7.png)
+![image](https://user-images.githubusercontent.com/28697165/111314240-8ccdfb00-86a4-11eb-9b20-6dee29b14de7.png)
 
 [500개]
 ![image](https://user-images.githubusercontent.com/28697165/111313870-319c0880-86a4-11eb-8421-1573e7dac9f2.png)
